@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme">
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>GlobalRate</span>
+            </div>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <svg class="sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <svg class="moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+        </header>
+
+        <main class="converter-card">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="amount">Enter your amount</label>
+                    <div class="amount-wrapper">
+                        <input type="number" id="amount" value="1000" step="0.01" min="0" placeholder="0.00">
+                    </div>
+                </div>
+            </div>
+
+            <div class="selectors-container">
+                <div class="select-box">
+                    <label>Source Currency</label>
+                    <div class="custom-select" id="from-currency-select">
+                        <div class="select-trigger">
+                            <img src="https://flagcdn.com/us.svg" alt="USA Flag" class="flag-icon">
+                            <span class="selected-text">USD</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
+                        </div>
+                        <div class="options-list"></div>
+                    </div>
+                </div>
+
+                <div class="swap-wrapper">
+                    <button id="swap-btn" aria-label="Swap Currencies">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m7 21-4-4 4-4"/><path d="M3 17h18"/><path d="m17 3 4 4-4 4"/><path d="M21 7H3"/></svg>
+                    </button>
+                </div>
+
+                <div class="select-box">
+                    <label>Target Currency</label>
+                    <div class="custom-select" id="to-currency-select">
+                        <div class="select-trigger">
+                            <img src="https://flagcdn.com/in.svg" alt="India Flag" class="flag-icon">
+                            <span class="selected-text">INR</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
+                        </div>
+                        <div class="options-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-container" id="result-container">
+                <div class="result-content" id="result-content">
+                    <div class="rate-info">
+                        <span class="base-amount">1,000 USD =</span>
+                        <h2 class="converted-amount">84,250.00 INR</h2>
+                    </div>
+                    <div class="exchange-details">
+                        <p class="rate-text">1 USD = 84.25 INR</p>
+                        <p class="update-time">Rates updated: Just now</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Created by Sahil Kumar</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
